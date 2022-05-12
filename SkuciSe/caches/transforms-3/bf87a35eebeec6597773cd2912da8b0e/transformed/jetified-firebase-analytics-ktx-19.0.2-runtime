@@ -1,0 +1,4 @@
+com.google.firebase.analytics.ktx.AnalyticsKt
+com.google.firebase.analytics.ktx.ConsentBuilder
+com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar
+com.google.firebase.analytics.ktx.ParametersBuilder

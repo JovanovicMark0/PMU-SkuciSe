@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="false"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oglas_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:background="#f7f7f7"
+        >
+
+        <ImageView
+            android:id="@+id/slika_oglasa"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="Slika oglasa"
+            tools:ignore="HardcodedText"
+            />
+
+        <TextView
+            android:id="@+id/ad_sale_yesNo"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_100"
+            android:backgroundTint="@color/purple_500"
+            android:elevation="10dp"
+            android:padding="10dp"
+            android:text="Izdaje se"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/oglas_id"
+            app:layout_constraintTop_toTopOf="@id/slika_oglasa"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/ad_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="#1DE8E8E8"
+            android:src="@drawable/ic_baseline_favorite_border_36"
+            app:layout_constraintBottom_toBottomOf="@+id/ad_sale_yesNo"
+            app:layout_constraintEnd_toEndOf="@+id/oglas_id"
+            app:layout_constraintTop_toTopOf="@+id/ad_sale_yesNo"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/ad_broj_lajkova"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="###"
+            app:layout_constraintStart_toStartOf="@id/ad_favorite"
+            app:layout_constraintEnd_toEndOf="@id/ad_favorite"
+            app:layout_constraintTop_toBottomOf="@id/ad_favorite"
+            tools:ignore="HardcodedText" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_remove_red_eye_24"
+            app:layout_constraintBottom_toTopOf="@id/ad_broj_pregleda"
+            app:layout_constraintStart_toStartOf="@id/ad_broj_pregleda"
+            app:layout_constraintEnd_toEndOf="@+id/ad_broj_pregleda"
+            />
+
+        <TextView
+            android:id="@+id/ad_broj_pregleda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ###"
+            android:textColor="@color/black"
+            android:background="#1DE8E8E8"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/ad_favorite"
+            app:layout_constraintStart_toStartOf="@+id/ad_favorite"
+            app:layout_constraintBottom_toTopOf="@+id/container1"
+            tools:ignore="HardcodedText,UseCompatTextViewDrawableXml" />
+
+
+        <LinearLayout
+            android:id="@+id/container1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/slika_oglasa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+
+            >
+
+            <TextView
+                android:id="@+id/naslov_oglasa"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="Naslov oglasa"
+                android:textColor="#000"
+                android:textSize="19sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/opis_oglasa"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="3"
+                android:text="Opis oglasa"
+                android:textColor="@color/gray_text"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ad_price"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="#16D600"
+            android:backgroundTint="#40CF19"
+            android:elevation="10dp"
+            android:padding="10dp"
+            android:text="cena"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/container1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slika_oglasa"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

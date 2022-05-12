@@ -1,0 +1,12 @@
+androidx.navigation.ui.ActivityKt
+androidx.navigation.ui.AppBarConfigurationKt
+androidx.navigation.ui.AppBarConfigurationKt$AppBarConfiguration$1
+androidx.navigation.ui.AppBarConfigurationKt$AppBarConfiguration$2
+androidx.navigation.ui.AppBarConfigurationKt$AppBarConfiguration$3
+androidx.navigation.ui.AppBarConfigurationKt$sam$i$androidx_navigation_ui_AppBarConfiguration_OnNavigateUpListener$0
+androidx.navigation.ui.BottomNavigationViewKt
+androidx.navigation.ui.CollapsingToolbarLayoutKt
+androidx.navigation.ui.MenuItemKt
+androidx.navigation.ui.NavControllerKt
+androidx.navigation.ui.NavigationViewKt
+androidx.navigation.ui.ToolbarKt

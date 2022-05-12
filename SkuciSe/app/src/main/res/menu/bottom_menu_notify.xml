@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navbar_home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Početna"
+        app:cnb_backgroundColor="@color/orange_100"
+        app:cnb_iconColor="@color/home"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/home" />
+    <item
+        android:id="@+id/navbar_like"
+        android:icon="@drawable/heart"
+        android:title="Omiljeni"
+        app:cnb_backgroundColor="@color/red_100"
+        app:cnb_iconColor="@color/red"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/red"/>
+    <item
+        android:id="@+id/navbar_new_add"
+        android:icon="@drawable/plus"
+        android:title="Dodaj oglas"
+        app:cnb_backgroundColor="@color/purple_100"
+        app:cnb_iconColor="@color/new_add"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/new_add"/>
+    <item
+        android:id="@+id/navbar_messages"
+        android:icon="@drawable/ic_baseline_notifications_active_24"
+        android:title="Obaveštenja"
+        app:cnb_backgroundColor="@color/yellow_100"
+        app:cnb_iconColor="@color/search"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/search"/>
+    <item
+        android:id="@+id/navbar_profile"
+        android:icon="@drawable/user"
+        android:title="Profil"
+        app:cnb_backgroundColor="@color/blue_100"
+        app:cnb_iconColor="@color/profile"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/profile"/>
+</menu>

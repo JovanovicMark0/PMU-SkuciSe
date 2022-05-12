@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollViewEditOglasa"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AddPage">
+
+
+        <TextView
+            android:id="@+id/adedit_izmeni_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Izmena oglasa"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageSwitcher
+            android:id="@+id/adedit_slike"
+            android:layout_width="355dp"
+            android:layout_height="254dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/ic_baseline_image_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adedit_izmeni_text" />
+
+
+
+        <ImageButton
+            android:id="@+id/adedit_prethodnaSlika"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="130dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:layout_constraintTop_toTopOf="@id/adedit_slike"/>
+
+        <ImageButton
+            android:id="@+id/adedit_sledecaSlika"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            app:layout_constraintTop_toTopOf="@id/adedit_slike"
+            />
+
+
+        <RadioGroup
+            android:id="@+id/adedit_radioGroup"
+            android:layout_width="188dp"
+            android:layout_height="106dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/adedit_kategorija"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_slike">
+
+            <RadioButton
+                android:id="@+id/adedit_izdavanje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:text="Izdavanje" />
+
+            <RadioButton
+                android:id="@+id/adedit_prodaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:text="Prodaja" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/adedit_kategorija"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="7dp"
+            android:entries="@array/kategorija"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_radioGroup"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_naslov"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Naslov oglasa*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_kategorija">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_naslov_naslov"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapSentences"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_opis_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:hint="Opis oglasa*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_naslov">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_opis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapSentences"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_adresa_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:hint="Adresa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_opis_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_adresa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapSentences"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_cena_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:hint="Cena*"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_adresa_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_cena"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/adedit_namestenost"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="3dp"
+            android:entries="@array/namestenost"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_cena_layout"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Spinner
+            android:id="@+id/adedit_stanjeObjekta"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:entries="@array/stanjeObjekta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_namestenost"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Spinner
+            android:id="@+id/adedit_gradnja"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/gradnja"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_stanjeObjekta"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_povrsina_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:hint="Površina"
+            app:layout_constraintEnd_toStartOf="@+id/adedit_spratovi_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_gradnja">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_povrsina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_spratovi_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:hint="Broj spratova"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_gradnja">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_brojSpratova"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adedit_sobe_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:hint="Broj soba"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adedit_stanjeObjekta"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_gradnja">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adedit_brojSoba"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/adedit_terasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Terasa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_povrsina_layout" />
+
+        <CheckBox
+            android:id="@+id/adedit_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Internet"
+            app:layout_constraintStart_toEndOf="@+id/adedit_terasa"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_povrsina_layout" />
+
+        <CheckBox
+            android:id="@+id/adedit_telefon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Telefon"
+            app:layout_constraintStart_toEndOf="@+id/adedit_internet"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_spratovi_layout" />
+
+        <CheckBox
+            android:id="@+id/adedit_katv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="KATV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_interfon" />
+
+        <CheckBox
+            android:id="@+id/adedit_lift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:text="Lift"
+            app:layout_constraintStart_toEndOf="@+id/adedit_parking"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_telefon" />
+
+        <CheckBox
+            android:id="@+id/adedit_klima"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Klima"
+            app:layout_constraintStart_toEndOf="@+id/adedit_interfon"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_internet" />
+
+        <CheckBox
+            android:id="@+id/adedit_grejanje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Grejanje"
+            app:layout_constraintStart_toEndOf="@+id/adedit_telefon"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_spratovi_layout" />
+
+        <CheckBox
+            android:id="@+id/adedit_parking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Parking"
+            app:layout_constraintStart_toEndOf="@+id/adedit_klima"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_telefon" />
+
+        <CheckBox
+            android:id="@+id/adedit_interfon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Interfon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_terasa" />
+
+        <CheckBox
+            android:id="@+id/adedit_video_nadzor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Video nadzor"
+            app:layout_constraintStart_toEndOf="@+id/adedit_katv"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_klima" />
+
+        <Button
+            android:id="@+id/adedit_izmeni_btn"
+            android:layout_width="163dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="30dp"
+            android:text="IZMENI OGLAS"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adedit_video_nadzor"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

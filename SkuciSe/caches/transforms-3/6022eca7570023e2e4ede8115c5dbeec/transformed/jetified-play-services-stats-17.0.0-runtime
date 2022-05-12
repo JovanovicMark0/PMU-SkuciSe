@@ -1,0 +1,6 @@
+com.google.android.gms.stats.CodePackage
+com.google.android.gms.stats.GCoreWakefulBroadcastReceiver
+com.google.android.gms.stats.WakeLock
+com.google.android.gms.stats.WakeLock$zza
+com.google.android.gms.stats.zza
+com.google.android.gms.stats.zzb

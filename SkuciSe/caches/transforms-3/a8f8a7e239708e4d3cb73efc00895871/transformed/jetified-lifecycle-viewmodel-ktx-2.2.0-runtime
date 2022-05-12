@@ -1,0 +1,4 @@
+androidx.lifecycle.CloseableCoroutineScope
+androidx.lifecycle.ViewModelKt
+androidx.lifecycle.ViewModelLazy
+androidx.lifecycle.ViewModelProviderKt

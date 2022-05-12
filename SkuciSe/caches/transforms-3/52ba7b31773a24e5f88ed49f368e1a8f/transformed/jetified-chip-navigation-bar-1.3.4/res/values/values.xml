@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cnb_default_badge_color">#F44336</color>
+    <color name="cnb_default_unselected_color">#696969</color>
+    <dimen name="cnb_badge_size">12dp</dimen>
+    <dimen name="cnb_badge_size_numberless">6dp</dimen>
+    <dimen name="cnb_badge_stroke_width">1dp</dimen>
+    <dimen name="cnb_badge_text_size">8dp</dimen>
+    <dimen name="cnb_icon_size">24dp</dimen>
+    <dimen name="cnb_space_0">6dp</dimen>
+    <dimen name="cnb_space_1">8dp</dimen>
+    <dimen name="cnb_space_2">12dp</dimen>
+    <dimen name="cnb_space_3">16dp</dimen>
+    <declare-styleable name="ChipMenuItem">
+        <attr name="android:id"/>
+        <attr name="android:title"/>
+        <attr name="android:icon"/>
+        <attr name="android:enabled"/>
+        <attr name="android:contentDescription"/>
+        <attr format="color" name="cnb_iconColor"/>
+        <attr name="cnb_iconTintMode">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+        </attr>
+        <attr format="color" name="cnb_textColor"/>
+        <attr format="color" name="cnb_backgroundColor"/>
+    </declare-styleable>
+    <declare-styleable name="ChipNavigationBar">
+        <attr format="reference" name="cnb_menuResource"/>
+        <attr format="dimension" name="cnb_minExpandedWidth"/>
+        <attr format="boolean" name="cnb_addBottomInset"/>
+        <attr format="boolean" name="cnb_addTopInset"/>
+        <attr format="boolean" name="cnb_addLeftInset"/>
+        <attr format="boolean" name="cnb_addRightInset"/>
+        <attr name="cnb_orientationMode">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+
+        <attr format="color" name="cnb_badgeColor"/>
+        <attr format="color" name="cnb_unselectedColor"/>
+        <attr format="dimension" name="cnb_radius"/>
+        <attr format="reference" name="cnb_textAppearance"/>
+        <attr format="dimension" name="cnb_iconSize"/>
+    </declare-styleable>
+</resources>

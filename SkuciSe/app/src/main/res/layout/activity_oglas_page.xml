@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.OglasPage"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/slike"
+                android:layout_width="350dp"
+                android:layout_height="254dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/ic_baseline_image_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/op_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="208dp"
+                android:src="@drawable/ic_baseline_delete_forever_24"
+                app:layout_constraintBottom_toBottomOf="@+id/slike"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/op_sale_yesNo"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/dugmePrethodnaSlika"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="135dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/dugmeSledecaSlika"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                tools:ignore="ContentDescription" />
+
+
+            <TextView
+                android:id="@+id/op_sale_yesNo"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/purple_100"
+                android:backgroundTint="@color/purple_500"
+                android:elevation="10dp"
+                android:padding="10dp"
+                android:text="Izdaje se"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/slike"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/op_broj_pregleda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="###"
+                android:textColor="@color/gray_text"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_baseline_remove_red_eye_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_lajkova"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingStart="15dp"
+                android:text=" ###"
+                android:textColor="@color/gray_text"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/op_broj_pregleda"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,RtlSymmetry"
+                app:drawableStartCompat="@drawable/ic_baseline_favorite_24" />
+
+
+            <TextView
+                android:id="@+id/op_naziv_oglasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Naziv oglasa"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/op_broj_pregleda"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_cena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CENA"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/op_valuta"
+                app:layout_constraintEnd_toStartOf="@+id/op_valuta"
+                app:layout_constraintTop_toTopOf="@+id/op_valuta"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_valuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/op_location_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/op_location"
+                app:layout_constraintStart_toStartOf="@+id/op_naziv_oglasa"
+                app:layout_constraintTop_toBottomOf="@+id/op_naziv_oglasa"
+                app:srcCompat="@drawable/ic_baseline_location_city_24"
+                app:tint="@color/search"
+                tools:ignore="ContentDescription" />
+
+
+            <TextView
+                android:id="@+id/op_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Beograd"
+                app:layout_constraintBottom_toBottomOf="@+id/op_location_pin"
+                app:layout_constraintStart_toEndOf="@+id/op_location_pin"
+                app:layout_constraintTop_toTopOf="@+id/op_location_pin"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/op_povrsina_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/op_location"
+                app:layout_constraintStart_toEndOf="@+id/op_location"
+                app:layout_constraintTop_toTopOf="@+id/op_location"
+                app:srcCompat="@drawable/ic_baseline_square_foot_24"
+                app:tint="@color/search"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/op_povrsina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="250"
+                app:layout_constraintBottom_toBottomOf="@+id/op_povrsina_icon"
+                app:layout_constraintStart_toEndOf="@+id/op_povrsina_icon"
+                app:layout_constraintTop_toTopOf="@+id/op_povrsina_icon"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_merna_jedinica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="m2"
+                app:layout_constraintBottom_toBottomOf="@+id/op_povrsina"
+                app:layout_constraintStart_toEndOf="@+id/op_povrsina"
+                app:layout_constraintTop_toTopOf="@+id/op_povrsina"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/op_br_soba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/op_merna_jedinica"
+                app:layout_constraintStart_toEndOf="@+id/op_merna_jedinica"
+                app:layout_constraintTop_toTopOf="@+id/op_merna_jedinica"
+                app:srcCompat="@drawable/ic_outline_bedroom_parent_24"
+                app:tint="@color/search"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/brojSoba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="4"
+                app:layout_constraintBottom_toBottomOf="@+id/op_br_soba"
+                app:layout_constraintStart_toEndOf="@+id/op_br_soba"
+                app:layout_constraintTop_toTopOf="@+id/op_br_soba"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/op_br_spratova_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/brojSoba"
+                app:layout_constraintStart_toEndOf="@+id/brojSoba"
+                app:layout_constraintTop_toTopOf="@+id/brojSoba"
+                app:srcCompat="@drawable/ic_outline_stairs_24"
+                app:tint="@color/search"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/op_brojSpratova"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="2"
+                app:layout_constraintBottom_toBottomOf="@+id/op_br_spratova_icon"
+                app:layout_constraintStart_toEndOf="@+id/op_br_spratova_icon"
+                app:layout_constraintTop_toTopOf="@+id/op_br_spratova_icon"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/op_opis_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+
+                android:text="Opis"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/op_location_pin"
+                app:layout_constraintTop_toBottomOf="@+id/op_location_pin"
+                tools:ignore="HardcodedText" />
+
+
+            <TextView
+                android:id="@+id/op_opis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Prelep četvorosoban stan na prodaju od 85 m2 u mirnom kraju na Lionu. Odlična lokacija (nekoliko minuta peške do Đeram pijace, Zvezdara teatra, najboljih pekara, kafića, restorana, marketa, dečijih prodavnica itd.) Nalazi se na granici Liona i Đerma, četvrtom spratu zgrade od ukupno pet spratova. Po strukturi četvorosoban, odvojene komforne 3 spavaće soba, prostrana dnevna soba sa trpezarijom, kuhinjom, kupatilom i wc-om. Ima opremljenu kuhinju sa el. uredjajima i kuhinjskim elementima, šank, poseduje klima uredjaj, centralno grejanje. Zgrada poseduje dva internet priključka, MTS optički internet i SBB. Stan je uknjižen 1/1, prazan i odmah useljiv.."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/op_opis_head"
+                app:layout_constraintTop_toBottomOf="@+id/op_opis_head"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_namestenost_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Nameštenost:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/op_opis"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_namestenost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="Namešten"
+                app:layout_constraintBottom_toBottomOf="@+id/op_namestenost_head"
+                app:layout_constraintStart_toEndOf="@+id/op_namestenost_head"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_stanje_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Stanje:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/op_namestenost_head"
+                app:layout_constraintTop_toBottomOf="@+id/op_namestenost_head"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_stanje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Izvorno"
+                app:layout_constraintBottom_toBottomOf="@+id/op_stanje_head"
+                app:layout_constraintStart_toEndOf="@+id/op_stanje_head"
+                app:layout_constraintStart_toStartOf="@+id/op_namestenost"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_gradnja_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Gradnja:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/op_namestenost_head"
+                app:layout_constraintTop_toBottomOf="@+id/op_stanje_head"
+                tools:ignore="HardcodedText" />
+
+
+            <TextView
+                android:id="@+id/gradnja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nova gradnja"
+                app:layout_constraintBottom_toBottomOf="@+id/op_gradnja_head"
+                app:layout_constraintStart_toStartOf="@+id/op_stanje"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/op_kategorija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingTop="5dp"
+                android:text="Kategorija:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/op_gradnja_head"
+                tools:ignore="HardcodedText" />
+
+
+            <TextView
+                android:id="@+id/kategorija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tip kategorije"
+                app:layout_constraintBottom_toBottomOf="@+id/op_kategorija"
+                app:layout_constraintStart_toStartOf="@+id/gradnja"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/terasa_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/op_kategorija"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+
+            <ImageView
+                android:id="@+id/video_nadzor_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/terasa_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/parking_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/video_nadzor_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/interfon_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parking_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/KATV_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interfon_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+
+            <ImageView
+                android:id="@+id/klima_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="108dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView24"
+                app:layout_constraintStart_toEndOf="@+id/textView24"
+                app:layout_constraintTop_toTopOf="@+id/textView24"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+
+            <ImageView
+                android:id="@+id/lift_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/klima_check"
+                app:layout_constraintTop_toBottomOf="@+id/klima_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/grejanje_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/lift_check"
+                app:layout_constraintTop_toBottomOf="@+id/lift_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+
+            <ImageView
+                android:id="@+id/telefon_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/grejanje_check"
+                app:layout_constraintTop_toBottomOf="@+id/grejanje_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/internet_check"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/telefon_check"
+                app:layout_constraintTop_toBottomOf="@+id/telefon_check"
+                app:srcCompat="@drawable/close"
+                tools:ignore="ContentDescription" />
+
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Terasa"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/terasa_check"
+                app:layout_constraintStart_toEndOf="@+id/terasa_check"
+                app:layout_constraintTop_toTopOf="@+id/terasa_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Video nadzor"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/video_nadzor_check"
+                app:layout_constraintStart_toEndOf="@+id/video_nadzor_check"
+                app:layout_constraintTop_toTopOf="@+id/video_nadzor_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Parking"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/parking_check"
+                app:layout_constraintStart_toEndOf="@+id/parking_check"
+                app:layout_constraintTop_toTopOf="@+id/parking_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Interfon"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/interfon_check"
+                app:layout_constraintStart_toEndOf="@+id/interfon_check"
+                app:layout_constraintTop_toTopOf="@+id/interfon_check"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="KATV"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/KATV_check"
+                app:layout_constraintStart_toEndOf="@+id/KATV_check"
+                app:layout_constraintTop_toTopOf="@+id/KATV_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Klima"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/klima_check"
+                app:layout_constraintStart_toEndOf="@+id/klima_check"
+                app:layout_constraintTop_toTopOf="@+id/klima_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Lift"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/lift_check"
+                app:layout_constraintStart_toEndOf="@+id/lift_check"
+                app:layout_constraintTop_toTopOf="@+id/lift_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Grejanje"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/grejanje_check"
+                app:layout_constraintStart_toEndOf="@+id/grejanje_check"
+                app:layout_constraintTop_toTopOf="@+id/grejanje_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Telefon"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/telefon_check"
+                app:layout_constraintStart_toEndOf="@+id/telefon_check"
+                app:layout_constraintTop_toTopOf="@+id/telefon_check"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Internet"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/internet_check"
+                app:layout_constraintStart_toEndOf="@+id/internet_check"
+                app:layout_constraintTop_toTopOf="@+id/internet_check"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/op_izmeni_oglas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Izmeni oglas"
+                app:layout_constraintTop_toBottomOf="@id/textView33"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/op_pozovi"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Pozovi"
+                app:layout_constraintEnd_toStartOf="@id/op_zatrazi_posetu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView33"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/op_zatrazi_posetu"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="Zatraži posetu"
+                app:layout_constraintBottom_toBottomOf="@id/op_pozovi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/op_pozovi"
+                app:layout_constraintTop_toTopOf="@id/op_pozovi"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_informacije_oglasivac"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:background="#f7f7f7"
+                android:padding="5dp"
+                android:text="Informacije o oglašivaču"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView33"
+                app:layout_constraintWidth_percent="0.9"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_username_korisnika"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:drawablePadding="5dp"
+                android:textAlignment="textStart"
+                android:text="Username korisnika"
+                app:layout_constraintTop_toBottomOf="@id/op_informacije_oglasivac"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                app:drawableStartCompat="@drawable/ic_baseline_person_24"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/op_grad_korisnika"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:background="#f7f7f7"
+                android:drawablePadding="5dp"
+                android:textAlignment="textStart"
+                android:text="Grad korisnika"
+                app:layout_constraintTop_toBottomOf="@id/op_username_korisnika"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9"
+                app:drawableStartCompat="@drawable/ic_baseline_location_city_24"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/op_prosek_ocena"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:drawablePadding="5dp"
+                android:textAlignment="textStart"
+                android:text="0/5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/op_grad_korisnika"
+                app:layout_constraintWidth_percent="0.9"
+                app:drawableStartCompat="@drawable/ic_baseline_star_rate_24"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/op_profil_oglasivaca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:background="#f7f7f7"
+                android:textAlignment="textEnd"
+                android:text="Pogledaj profil oglašivača ➔"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/op_prosek_ocena"
+                app:layout_constraintWidth_percent="0.9"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/op_oceni_oglasivaca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:background="#f7f7f7"
+                android:textAlignment="textEnd"
+                android:text="Oceni oglašivača ➔"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/op_profil_oglasivaca"
+                app:layout_constraintWidth_percent="0.9"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Powered by Platinum®"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@id/op_oceni_oglasivaca"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="HardcodedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>
